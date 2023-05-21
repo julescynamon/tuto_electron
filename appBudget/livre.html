@@ -135,127 +135,111 @@
                         <button
                             id="addRegister"
                             class="btn btn-primary fa-pull-right"
+                            data-toggle="modal"
+                            data-target="#addLineModal"
                         >
                             + Ajouter une ligne de compte
                         </button>
-                        <table
-                            class="table table-striped"
-                            id="tableRegistre"
-                            data-toogle="modal"
-                            data-target="#addLineModal"
+
+                        <!-- Modal pour ajouter une ligne dans le tableau -->
+                        <div
+                            class="modal fade"
+                            id="addLineModal"
+                            tabindex="-1"
+                            role="dialog"
+                            aria-hidden="true"
                         >
-                            <!-- Modal pour ajouter une ligne dans le tableau -->
-                            <div
-                                class="modal fade"
-                                id="addLineModal"
-                                tabindex="-1"
-                                role="dialog"
-                                aria-hidden="true"
-                            >
-                                <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4
-                                                class="modal-title"
-                                                id="myModalLabel"
-                                            >
-                                                Ajouter une ligne
-                                            </h4>
-                                        </div>
-                                        <div
-                                            class="modal-body col-lg-12 txtGrey"
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4
+                                            class="modal-title"
+                                            id="myModalLabel"
                                         >
-                                            Saisir les informations puis valider
-                                            : <br />
-                                            <table
-                                                id="modalTable"
-                                                style="
-                                                    width: 100%;
-                                                    margin-top: 10px;
-                                                "
-                                            >
-                                                <!-- Date -->
-                                                <tr>
-                                                    <td class="col-md-3">
-                                                        Date
-                                                    </td>
-                                                    <td class="col-md-9">
-                                                        <input
-                                                            class="form-control form-control-inline"
-                                                            type="date"
-                                                            id="dateLigne"
-                                                        />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td
-                                                        style="
-                                                            visibility: hidden;
-                                                        "
-                                                    >
-                                                        -
-                                                    </td>
-                                                </tr>
-                                                <!-- Montant -->
-                                                <tr>
-                                                    <td class="col-md-3">
-                                                        Montant
-                                                    </td>
-                                                    <td class="col-md-9">
-                                                        <input
-                                                            class="form-control form-control-inline"
-                                                            type="number"
-                                                            step="any"
-                                                            id="montantLigne"
-                                                        />
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td
-                                                        style="
-                                                            visibility: hidden;
-                                                        "
-                                                    >
-                                                        -
-                                                    </td>
-                                                </tr>
-                                                <!-- Infos -->
-                                                <tr>
-                                                    <td class="col-md-3">
-                                                        Infos
-                                                    </td>
-                                                    <td class="col-md-9">
-                                                        <input
-                                                            class="form-control form-control-inline"
-                                                            type="text"
-                                                            id="infoLigne"
-                                                        />
-                                                    </td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button
-                                                type="button"
-                                                class="btn btn-default"
-                                                data-dismiss="modal"
-                                            >
-                                                Annuler
-                                            </button>
-                                            <button
-                                                type="button"
-                                                class="btn btn-primary"
-                                                id="btnSaveLigne"
-                                                data-dismiss="modal"
-                                            >
-                                                Enregistrer
-                                            </button>
-                                        </div>
+                                            Ajouter une ligne
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body col-lg-12 txtGrey">
+                                        Saisir les informations puis valider :
+                                        <br />
+                                        <table
+                                            id="modalTable"
+                                            style="
+                                                width: 100%;
+                                                margin-top: 10px;
+                                            "
+                                        >
+                                            <!-- Date -->
+                                            <tr>
+                                                <td class="col-md-3">Date</td>
+                                                <td class="col-md-9">
+                                                    <input
+                                                        class="form-control form-control-inline"
+                                                        type="date"
+                                                        id="dateLigne"
+                                                    />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="visibility: hidden">
+                                                    -
+                                                </td>
+                                            </tr>
+                                            <!-- Montant -->
+                                            <tr>
+                                                <td class="col-md-3">
+                                                    Montant
+                                                </td>
+                                                <td class="col-md-9">
+                                                    <input
+                                                        class="form-control form-control-inline"
+                                                        type="number"
+                                                        step="any"
+                                                        id="montantLigne"
+                                                    />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="visibility: hidden">
+                                                    -
+                                                </td>
+                                            </tr>
+                                            <!-- Infos -->
+                                            <tr>
+                                                <td class="col-md-3">Infos</td>
+                                                <td class="col-md-9">
+                                                    <input
+                                                        class="form-control form-control-inline"
+                                                        type="text"
+                                                        id="infoLigne"
+                                                    />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button
+                                            type="button"
+                                            class="btn btn-default"
+                                            data-dismiss="modal"
+                                        >
+                                            Annuler
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn btn-primary"
+                                            id="btnSaveLigne"
+                                            data-dismiss="modal"
+                                        >
+                                            Enregistrer
+                                        </button>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Fin Modal pour ajouter une ligne dans le tableau -->
+                        </div>
+                        <!-- Fin Modal pour ajouter une ligne dans le tableau -->
 
+                        <table class="table table-striped" id="tableRegistre">
                             <h4>Registre</h4>
                             <hr />
                             <thead>
@@ -315,11 +299,12 @@
         <!-- Custom scripts for all pages-->
         <script src="js/sb-admin-2.min.js"></script>
         <script src="./js/app.js"></script>
+        <script src="./js/livre.js"></script>
 
         <!-- Page level plugins -->
-        <script src="vendor/chart.js/Chart.min.js"></script>
+        <!-- <script src="vendor/chart.js/Chart.min.js"></script>
         <script src="js/demo/chart-area-demo.js"></script>
-        <script src="js/demo/chart-pie-demo.js"></script>
+        <script src="js/demo/chart-pie-demo.js"></script> -->
         <script src="vendor/datatables/jquery.dataTables.min.js"></script>
         <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
         <script src="js/demo/datatables-demo.js"></script>
