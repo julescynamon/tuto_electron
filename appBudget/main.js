@@ -43,6 +43,20 @@ function createWindow() {
             win.maximize();
         }
     });
+
+    // Manipulation de la base de donnéees
+    ipc.on('addLigneToDb', (e, data) => {
+        const dataStore = require('nedb');
+        const db = new dataStore({ filename: 'data.db', autoload: true });
+        db.insert(data, (err, newRec) => {
+            if (err) {
+                console.log('erreur =', err);
+                return;
+            }
+            console.log('created =', newRec);
+            win.reload();
+        });
+    });
 }
 
 app.whenReady().then(() => {
